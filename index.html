@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
-    <title>テストの文章だよ～</title>
     <meta charset="UTF-8" />
+    <title>Datadog RUM Test Page</title>
+    <script>
+      window.DD_RUM &&
+        window.DD_RUM.init({
+          applicationId: "44a44c44-f986-4183-958a-9df46c4ff18f",
+          clientToken: "pub69fef3364c54fc514d7fb7200aaa0b64",
+          site: "ap1.datadoghq.com",
+          service: "test",
+          env: "your-env-name", // 例: 'staging' or 'prod'
+          // version: '1.0.0', // デプロイされたアプリケーションのバージョン
+          sessionSampleRate: 100,
+          trackInteractions: true,
+          defaultPrivacyLevel: "mask-user-input",
+        });
+    </script>
+    <script
+      src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js"
+      async
+    ></script>
   </head>
   <body>
-    <h1>ここがh1だよ</h1>
-    <p>ここは 普通に改行できる</p>
+    <h1>Datadog RUM Test Page</h1>
+    <p>Interact with this page to generate RUM data.</p>
+    <!-- Add your page's content here -->
   </body>
 </html>
